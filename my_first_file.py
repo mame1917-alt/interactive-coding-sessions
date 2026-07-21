@@ -133,5 +133,8 @@ my_intro = "Hello, my name is Marlee and I am " + my_age
 my_intro_corrected = "Hello, my name is Marlee and I am " + str(my_age)
 print(my_intro_corrected)
 
+float('3.14')
+
+
 # str(), float(), int(), and bool() are functions
 #that can turn an input into the desired type...assuming this is possible
