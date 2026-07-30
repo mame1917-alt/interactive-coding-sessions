@@ -1,0 +1,88 @@
+# We've been using functinos from Day 1:
+#print(), type(), round(), str(), float(), int(), bool(), len()\
+len("Marlee") #number of elements in a string, or a sequence.
+
+#What is a function?
+    #it usually takes one or more inputs and usually returns a result
+#print() <- It takes any expression that we want to print
+#It prints stuff to the user
+
+#str() <- It takes any expression
+#It turns it into a string, and returns it to the user
+
+#What does it mean to return something?
+#Lets take print() as an example:
+print('1234') #It is going to print '1234' in the terminal
+my_content = print('1234')
+my_content #My_contents is empty because print 1234 did not store anything in it. 
+
+#Why?
+    #They are going to take an object on one side, do things to it, and then RETURN
+    #the result of what it did on the other side of the machine
+    
+    #Other functions are just doing stuff: Think of them as a conveyor belt:
+    #You are going to put some gas into them, they are going to do something;
+    #but they are not going to hand you back anything
+
+#Lets write functions together to better understand this distinction:
+# We are going to write a function that takes a price, a rate, and returns the price
+    #updated with the rate
+
+#How do we create a new function? WE use this syntax:
+def print_total(price, rate): #def, followed by the function name, parenthsis(arguments)
+    #You will see that your cursor moved to the write after hitting return,
+    #this defines the BODY of the function. Every code inside is going
+    # to define what the function will do.
+    total = price *(1 + rate)
+    print(total)
+#WE have created our functions, lets test drive it!
+print_total(10, .1)
+#Lets say I want to store this result for later use:
+my_total =print_total(10, .1)
+my_total #Nothing inside my_total. 
+#This function does NOT RETURN anything to me as a user. It is just doing things. 
+    #Engine, not conveyor belt
+#Lets write another function then that solves this issue:
+def calculate_total(price, rate): #Same structure as before
+    total = price *(1 + rate)
+    return total  #On the other side of the conveyor belt, spit out the total
+my_total = calculate_total(10, .1) #What happens when I run that?
+print(my_total) #Success, this function calculated soemthing,
+#returned it back to me and now I can use it and store it into a variable
+#What happens if you don't store it?
+calculate_total(10, .1) #Just falls into the terminal and gets printed
+#Always better to have functions that RETURN stuff, it gives more flexibility to the user
+
+#More vocabulary:  the inputs of a fucntion are called the ARGUMENTS.
+    #They come in two flavors:
+        #1. 'Positional arguments', defined by the order in which you enter them. 
+        round(3.14,1) #Rounds the first number to the number of digits in the second number.
+        round(1, 3.14) #Position matters!
+
+calculate_total(10,.1)
+calculate_total(.1,10). #Positional arguements are expected in a certain order,
+#and given into a certain order. 
+
+
+#Some functions take a variable number of arguments
+round(3.14) #Here the second argument is non-compulsory. It has a default which is zero. 
+print("ABC") #Print 'ABC'
+print('ABC',"DEF","GHI") #Print( 'ABC DEF GHI')
+#Print is an example of a function that takes an arbitrary number of arguments.
+#You canj give as many as you want,and it's going to print them all
+
+        ##2. 'Named arguments' or "keyword" arguments.
+        #These are arguments that are added by specifying their name  
+print('A','B','C','D', sep ='*"')
+#Named arguments are not compulsory, and have a default value
+#Default argument for sep is space
+print('A','B','C','D', sep = '-', end = '!')
+
+#One final important thing:
+def add_excitement(string)
+     excited_string = string+ '!!!!!!!'
+     return excited_string
+    #Anything added after the return will not do anything
+
+python_is_fun = add_excitement("Python is fun")
+python_is_fun
